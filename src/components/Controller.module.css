@@ -1,0 +1,81 @@
+/* Controller- Container */
+
+.controller-container {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  margin-left: 0.25rem;
+}
+
+/* .cmc {
+  margin: auto;
+  background: red;
+} */
+
+/* Range slider design */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 7rem;
+}
+
+/***** Track Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: rgba(0, 25, 51, 253);
+  border-radius: 10px;
+  height: 0.5rem;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  background-color: rgba(0, 25, 51, 253);
+  border-radius: 10px;
+  height: 0.5rem;
+}
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -3px;
+  background-color: var(--color-Primary);
+  height: 0.8rem;
+  width: 0.8rem;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+  background-color: var(--color-Primary);
+  height: 0.8rem;
+  width: 0.8rem;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+/* Button design */
+.controller {
+  background-color: rgba(0, 25, 51, 253);
+  font-size: var(--fs-0875);
+  padding: 0.5rem 0.8rem;
+  margin: 0 0.3rem;
+  color: var(--color-Primary);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 250ms ease-in;
+}
+
+.controller:hover {
+  background-color: rgba(0, 25, 51, 0.9);
+}

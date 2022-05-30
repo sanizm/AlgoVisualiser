@@ -1,0 +1,16 @@
+/* Footer Design */
+.main-footer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--pg-150);
+  color: var(--color-Primary);
+  font-size: var(--fs-0875);
+}
+
+.main-footer p {
+  position: absolute;
+  padding: var(--pg-100);
+  bottom: 0;
+}

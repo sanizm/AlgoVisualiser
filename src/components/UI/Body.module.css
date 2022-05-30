@@ -1,0 +1,32 @@
+/* Headline design */
+.title {
+  padding: var(--pg-150);
+  font-family: "Noto Serif Display", serif;
+  min-height: calc(90vh - 144.05px);
+  display: flex;
+  transform: translateX(-100%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: initial;
+  animation: headline-motion 300ms ease-in 400ms 1 forwards;
+}
+
+@keyframes headline-motion {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.headline-text {
+  font-weight: 700;
+  line-height: 5rem;
+  color: #f5f5f5;
+  font-size: var(--fs-headline);
+}
+
+.headline-second-half {
+  padding-left: var(--pg-200);
+}

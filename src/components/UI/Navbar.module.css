@@ -1,0 +1,23 @@
+/* Styling header */
+
+header {
+  background: rgba(0, 25, 51, 253);
+}
+
+.main-navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Styling navbar child elements */
+
+.logo {
+  width: var(--logo-name-size);
+  margin: var(--mg-100);
+  transition: transform 0.5s ease-in-out;
+}
+
+.logo:hover {
+  transform: rotate(180deg);
+}

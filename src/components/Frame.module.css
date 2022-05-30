@@ -1,0 +1,23 @@
+/* frame design */
+
+.frame {
+  display: flex;
+  padding: 0 1rem;
+  justify-content: center;
+  border: 1px solid black;
+  position: relative;
+  width: 97vw;
+  min-height: 75vh;
+  height: calc(98vh - 129.05px);
+  margin: auto;
+}
+
+.frame-element {
+  height: 90%;
+  text-align: center;
+  overflow: hidden;
+  width: 10px;
+  /* background-color: aqua; */
+  border: 1px solid transparent;
+  border-top: 0;
+}
