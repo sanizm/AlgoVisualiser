@@ -94,3 +94,13 @@ a:focus {
   height: calc(100% - 77.06px);
   background: var(--color-Primary);
 }
+
+.frame-element {
+  height: 90%;
+  text-align: center;
+  overflow: hidden;
+  width: 10px;
+  /* background-color: aqua; */
+  border: 1px solid transparent;
+  border-top: 0;
+}

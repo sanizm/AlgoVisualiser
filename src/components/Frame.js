@@ -28,12 +28,13 @@ export const Frame = () => {
   }, []);
 
   return (
-    <div ref={frameRef} className={classes.frame}>
+    <div ref={frameRef} id="sorting-frame" className={classes.frame}>
       {frameElements?.map((element) => (
         <div
-          className={classes["frame-element"]}
+          className="frame-element"
           id={element.id}
           key={element.key}
+          data-key={element.key}
           style={element.style}
         ></div>
       ))}

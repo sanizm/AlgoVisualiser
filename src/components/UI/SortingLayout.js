@@ -4,13 +4,16 @@ import { Controller } from "../Controller";
 import { Frame } from "../Frame";
 import { FrameStateContext } from "../../context/frame-context";
 
-export const SortingLayout = () => {
+export const SortingLayout = (props) => {
   return (
     <React.Fragment>
       <Navbar />
       <div className="body">
         <FrameStateContext>
-          <Controller />
+          <Controller
+            sortMethod={props.sortMethod}
+            isSorting={props.isSorting}
+          />
           <Frame />
         </FrameStateContext>
       </div>
