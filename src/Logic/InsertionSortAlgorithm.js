@@ -23,21 +23,27 @@ export function InsertionSortAnimation(array, effects, elementSize) {
   let ctr = 0;
   let timeAccToWidth = Math.floor(Number(elementSize) / 10);
   console.log(timeAccToWidth);
-  let delayAccToWidth = 1;
+  let delayAccToWidth = 1,
+    delayAccToWidthColor = 1;
   if (timeAccToWidth >= 7) {
     timeAccToWidth *= 100;
     delayAccToWidth = 1.01;
+    delayAccToWidthColor = 1.006;
   } else if (timeAccToWidth >= 6) {
     timeAccToWidth *= 80;
     delayAccToWidth = 1.009;
+    delayAccToWidthColor = 1.006;
   } else if (timeAccToWidth >= 5) {
     timeAccToWidth *= 60;
     delayAccToWidth = 1.007;
+    delayAccToWidthColor = 1.005;
   } else if (timeAccToWidth >= 4) {
     timeAccToWidth *= 40;
     delayAccToWidth = 1.004;
+    delayAccToWidthColor = 1.003;
   } else if (timeAccToWidth >= 2) {
     delayAccToWidth = 1.002;
+    delayAccToWidthColor = 1.0015;
     timeAccToWidth *= 20;
   }
   console.log(delayAccToWidth);
@@ -59,7 +65,7 @@ export function InsertionSortAnimation(array, effects, elementSize) {
           255 - current_RGB.green
         },${255 - current_RGB.blue})`;
         prevElement.style.borderColor = `rgb(${current_RGB.red},${current_RGB.green},${current_RGB.blue})`;
-      }, ctr * timeAccToWidth * 1);
+      }, ctr * timeAccToWidth * delayAccToWidthColor);
 
       setTimeout(() => {
         currentElement.id = prevId;
