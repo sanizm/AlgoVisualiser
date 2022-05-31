@@ -22,18 +22,25 @@ export function InsertionSort(array) {
 export function InsertionSortAnimation(array, effects, elementSize) {
   let ctr = 0;
   let timeAccToWidth = Math.floor(Number(elementSize) / 10);
-
+  console.log(timeAccToWidth);
+  let delayAccToWidth = 1;
   if (timeAccToWidth >= 7) {
     timeAccToWidth *= 100;
+    delayAccToWidth = 1.01;
   } else if (timeAccToWidth >= 6) {
     timeAccToWidth *= 80;
+    delayAccToWidth = 1.009;
   } else if (timeAccToWidth >= 5) {
     timeAccToWidth *= 60;
+    delayAccToWidth = 1.007;
   } else if (timeAccToWidth >= 4) {
     timeAccToWidth *= 40;
-  } else if (timeAccToWidth > 2) {
+    delayAccToWidth = 1.004;
+  } else if (timeAccToWidth >= 2) {
+    delayAccToWidth = 1.002;
     timeAccToWidth *= 20;
   }
+  console.log(delayAccToWidth);
   for (let i = 0; i < effects.length; i++) {
     setTimeout(() => {});
     const swappedIndexArray = effects[i];
@@ -59,7 +66,7 @@ export function InsertionSortAnimation(array, effects, elementSize) {
         currentElement.style.height = `${prevId}%`;
         prevElement.id = currentId;
         prevElement.style.height = `${currentId}%`;
-      }, ctr * timeAccToWidth * 1.01);
+      }, ctr * timeAccToWidth * delayAccToWidth);
 
       setTimeout(() => {
         currentElement.style.backgroundColor = `rgb(${current_RGB.red},${current_RGB.green},${current_RGB.blue})`;
@@ -71,7 +78,7 @@ export function InsertionSortAnimation(array, effects, elementSize) {
         prevElement.style.borderColor = `rgb(${255 - current_RGB.red},${
           255 - current_RGB.green
         },${255 - current_RGB.blue})`;
-      }, ctr * timeAccToWidth * 1.01);
+      }, ctr * timeAccToWidth * delayAccToWidth);
       ctr++;
     }
   }
