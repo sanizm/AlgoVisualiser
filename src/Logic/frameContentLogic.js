@@ -55,7 +55,26 @@ export function makeElementsBoundTo(
   } else if (currentNoOfElements < expectedNoOfElements) {
     const NoOfElementsToAdd = expectedNoOfElements - currentNoOfElements;
     return addElements(updatedFrameElements, elementSize, NoOfElementsToAdd);
+  } else {
+    return updatedFrameElements;
   }
+}
+
+export function getPropertiesFromLiveFrameElements(array, elementSize) {
+  const elements = [];
+  for (let i = 0; i < array.length; i++) {
+    elements.push({
+      id: array[i].dataset.id,
+      key: array[i].dataset.key,
+      style: {
+        height: `${array[i].style.height}%`,
+        backgroundColor: `${array[i].style.backgroundColor}`,
+        width: `${Number(elementSize)}px`,
+        borderColor: `${array[i].style.borderColor}`,
+      },
+    });
+  }
+  return elements;
 }
 
 // Helper functions
