@@ -109,7 +109,6 @@ export const Controller = ({ sortMethod, isSorting }) => {
 
       arrayRef.current = deepCopyOfFrameElements;
     } else if (sortMethod === "BubbleSort" && !isSortingRef.current) {
-      console.log("BubbleSort", deepCopyOfFrameElements);
       const effects = bubbleSort(deepCopyOfFrameElements);
       InsertionSortAnimation(divElements, effects, elementSize);
       isSortingRef.current = true;
