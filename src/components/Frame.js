@@ -5,24 +5,34 @@ import {
   getNoOfElements,
   getRGBValue,
   createFrameElements,
-  // makeElementsBoundTo,
+  //makeElementsBoundTo,
 } from "../Logic/frameContentLogic";
 import { FrameContext } from "../context/frame-context";
 
 export const Frame = () => {
   const frameRef = useRef();
 
-  const { frameElements, setFrameRef, elementSize, setFrameElements } =
-    useContext(FrameContext);
+  const {
+    arrayRef,
+    frameElements,
+    setFrameRef,
+    elementSize,
+    setFrameElements,
+  } = useContext(FrameContext);
 
   useEffect(() => {
     setFrameRef(frameRef);
     const FrameWidth = getCurrentFrameWidth(frameRef.current);
     const size = getNoOfElements(FrameWidth, elementSize);
     let color = getRGBValue();
-    setFrameElements(
-      createFrameElements(color.red, color.green, color.blue, elementSize, size)
+    arrayRef.current = createFrameElements(
+      color.red,
+      color.green,
+      color.blue,
+      elementSize,
+      size
     );
+    setFrameElements(arrayRef.current);
 
     // eslint-disable-next-line
   }, []);

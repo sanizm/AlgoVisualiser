@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 export const FrameContext = React.createContext();
 
 export const FrameStateContext = ({ children }) => {
@@ -6,6 +6,7 @@ export const FrameStateContext = ({ children }) => {
   const [frameRef, setFrameRef] = useState();
   const [frameElements, setFrameElements] = useState([]);
   const [elementSize, setElementSize] = useState("10");
+  const arrayRef = useRef();
 
   const sliderValueHandler = () => {
     setElementSize(inputRef.value);
@@ -15,6 +16,7 @@ export const FrameStateContext = ({ children }) => {
     <FrameContext.Provider
       value={{
         elementSize,
+        arrayRef,
         inputRef,
         setInputRef,
         frameRef,
