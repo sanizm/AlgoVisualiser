@@ -4,7 +4,9 @@ import { FrameContext } from "../context/frame-context";
 import {
   InsertionSort,
   bubbleSort,
+  QuickSort,
   InsertionSortAnimation,
+  QuickSortAnimation,
 } from "../Logic/InsertionSortAlgorithm";
 import {
   getCurrentFrameWidth,
@@ -111,6 +113,11 @@ export const Controller = ({ sortMethod, isSorting }) => {
     } else if (sortMethod === "BubbleSort" && !isSortingRef.current) {
       const effects = bubbleSort(deepCopyOfFrameElements);
       InsertionSortAnimation(divElements, effects, elementSize);
+      isSortingRef.current = true;
+      arrayRef.current = deepCopyOfFrameElements;
+    } else if (sortMethod === "QuickSort" && !isSortingRef.current) {
+      const effects = QuickSort(deepCopyOfFrameElements);
+      QuickSortAnimation(divElements, effects, elementSize);
       isSortingRef.current = true;
       arrayRef.current = deepCopyOfFrameElements;
     }

@@ -77,15 +77,15 @@ export function getPropertiesFromLiveFrameElements(array, elementSize) {
   return elements;
 }
 
+export function generateRGBValue() {
+  return Math.floor(Math.random() * 255) + 0;
+}
+
 // Helper functions
 
 function getRandomHeight() {
   // Math.floor( Math.random() * (98 - 5 + 1) + 5);
   return Math.random() * (98 - 5 + 1) + 5; // (max - min + 1)
-}
-
-function generateRGBValue() {
-  return Math.floor(Math.random() * 255) + 0;
 }
 
 function removeElements(elements, NoOfElementsToRemove) {
